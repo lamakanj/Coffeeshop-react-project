@@ -1,9 +1,9 @@
 import { useState } from "react";
 import DataContext from "./DataContext";
-
+import MenuItems from "./MenuData";
 
 function DataProvider({ children}){
-const [cartItem, setCartItem] = useState([]);
+const [cartItem, setCartItem] = useState([MenuItems]);
 
 const addItem = (item) => {
     setCartItem((prev) => [...prev, item]);
