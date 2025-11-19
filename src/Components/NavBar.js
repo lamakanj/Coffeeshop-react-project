@@ -9,7 +9,7 @@ const NavBar = () => {
             <Link to="/about">About</Link>
             <Link to="/menu">Menu</Link>
             <Link to="/contact">Contact</Link>
-            <Link to="/admin">AdminPanel</Link>
+           
            
             </div>
         </div>
