@@ -1,8 +1,18 @@
+
+import InstagramIcon from
+"@mui/icons-material/Instagram";
+
+import TwitterIcon from
+"@mui/icons-material/Twitter";
+
+import FacebookIcon from
+"@mui/icons-material/Facebook";
+
 const Footer = () => {
     return ( 
         <div className="footer">
-           <p>&copy; {new Date().getFullYear()} Moonlight Café. All rights reserved.</p>
-           <p><a href="https://instagram.com/moonlightcafe">Instagram</a> | <a href="https://facebook.com/moonlightcafe">Facebook</a> | <a href="https://twitter.com/moonlightcafe">Twitter</a></p>
+           <p>&copy; 2025 Moonlight Café. All rights reserved.</p>
+           <InstagramIcon/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <TwitterIcon/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FacebookIcon/> 
         </div>
     );
 }

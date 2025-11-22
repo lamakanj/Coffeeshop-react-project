@@ -5,78 +5,49 @@ import DeleteIcon from "@mui/icons-material/Delete";
 function Menu() {
   const [items, setItems] = useState(menuItems);
   const [selectedCategory, setSelectedCategory] = useState("breakfast");
-
- 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
 
-
-  const deleteItem = (name, category) => {
-    setItems((prev) => ({
-      ...prev,
-      [category]: prev[category].filter((item) => item.name !== name),
-    }));
+  const deleteItem = (name) => {
+    alert(name+" has been deleted from"+selectedCategory);
   };
-
  
-  const addItem = () => {
+  function addItem() {
     if (!name || !price || !image) {
       alert("Please fill in all fields");
       return;
+    }else{
+      alert("A new item has been added\nName: "+name+ "\nPrice: "+price+"\nCategory: "+selectedCategory);
     }
-
-    const exists = items[selectedCategory].some((item) => item.name === name);
-    if (exists) {
-      alert("This item already exists!");
-      return;
-    }
-
-    const newItem = { name, price, image };
-    setItems((prev) => ({
-      ...prev,
-      [selectedCategory]: [...prev[selectedCategory], newItem],
-    }));
-
-    
-    setName("");
-    setPrice("");
-    setImage("");
-  };
+  }
 
   return (
     <section className="menu">
       <h2>Our Full Menu</h2>
-
     
       <div className="menu-categories">
         <button
           onClick={() => setSelectedCategory("breakfast")}
           className={selectedCategory === "breakfast" ? "active" : ""}
-        >
-          Breakfast
-        </button>
+        >Breakfast</button>
+
         <button
           onClick={() => setSelectedCategory("dessert")}
           className={selectedCategory === "dessert" ? "active" : ""}
-        >
-          Dessert
-        </button>
+        >Dessert</button>
+
         <button
           onClick={() => setSelectedCategory("cold")}
           className={selectedCategory === "cold" ? "active" : ""}
-        >
-          Cold Drinks
-        </button>
+        >Cold Drinks</button>
+        
         <button
           onClick={() => setSelectedCategory("hot")}
           className={selectedCategory === "hot" ? "active" : ""}
-        >
-          Hot Drinks
-        </button>
+        >Hot Drinks</button>
       </div>
 
-      
       <div className="add-form">
         <h3>Add New Item to {selectedCategory}</h3>
         <input
@@ -100,7 +71,6 @@ function Menu() {
         <button onClick={addItem}>Add Item</button>
       </div>
 
-     
       <div className="menu-items">
         {items[selectedCategory].map((item, index) => (
           <div key={index} className="menu-item">
@@ -109,9 +79,8 @@ function Menu() {
             <p>{item.price}</p>
             <button
               className="remove-btn"
-              onClick={() => deleteItem(item.name, selectedCategory)}
-            >
-              <DeleteIcon />
+              onClick={() => deleteItem(item.name, selectedCategory)}>
+              <DeleteIcon/>
             </button>
           </div>
         ))}

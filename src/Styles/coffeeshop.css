@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Georgia', serif;
+  font-family:"Roboto";
   background-color: #fef9f4;
   color: #3e2c1c;
   line-height: 1.6;
@@ -195,6 +195,7 @@ html {
   color: #d2a679;
   margin: 0 0.5rem;
 }
+
 .menu-categories {
   display: flex;
   justify-content: center;
@@ -517,14 +518,150 @@ html {
   transform: scale(0.95);          
 }
 
+.submitted-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.submitted-table th,
+.submitted-table td {
+  border: 1px solid #6b4f36;   
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.submitted-table th {
+  background-color: #3e2c1c;   
+  color: #fff;                
+  font-weight: bold;
+}
+
+.submitted-table tr:nth-child(even) {
+  background-color: #f9f5f0;   
+}
+
+.submitted-table tr:hover {
+  background-color: #e6dccf;  
+}
+
+
+
 
 /* === Responsive === */
+@media (max-width: 992px) {
+  /* Navbar */
+  .NavBar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* About */
+  .about {
+    padding: 3rem 1rem;
+  }
+  .about h2 {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Hero */
+  .hero {
+    padding: 2rem 1rem;
+    min-height: 60vh;
+  }
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+  }
+
+  /* Menu */
+  .menu {
+    padding: 3rem 1rem;
+  }
+  .menu h2 {
+    font-size: 2rem;
   }
   .menu-items {
     grid-template-columns: 1fr;
   }
+  .menu-item {
+    width: 100%;
+    height: auto;
+  }
 
+  /* Contact */
+  .contact {
+    padding: 3rem 1rem;
+    max-width: 100%;
+  }
+  .contact h2 {
+    font-size: 2rem;
+  }
+  .contact input,
+  .contact textarea {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+  .contact button {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  /* Submitted Table */
+  .submitted-info {
+    overflow-x: auto; 
+  }
+  .submitted-table th,
+  .submitted-table td {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Navbar */
+  .logo {
+    font-size: 1.4rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Hero */
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Menu categories */
+  .menu-categories {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .menu-categories button {
+    max-width: 100%;
+    flex: none;
+  }
+
+  /* Home menu items */
+  .home-menu-items {
+    flex-direction: column;
+    padding: 0;
+  }
+  .home-menu-item {
+    width: 100%;
+  }
+
+  /* Table */
+  .submitted-table th,
+  .submitted-table td {
+    font-size: 0.8rem;
+  }
 }
